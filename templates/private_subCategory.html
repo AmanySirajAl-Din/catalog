@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+{% block content %}            
+            
+    {% include "return-to-home.html" %}
+
+        <main class="sub-category-item main-section">
+            <h1 class="sub-header">{{subCategory.name}} Recipes</h1>
+            <p class="descrip-p">Description: {{subCategory.description}}</p>
+            <div class="edit-delete-div">
+                <a id="edit-a" href='{{url_for('editSubCategory', mainCategory_id = subCategory.category.id, subCategory_id = subCategory.id, item = subCategory)}}'>Edit</a>
+                <a id="delete-a" href='{{url_for('deleteSubCategory', mainCategory_id = subCategory.category.id, subCategory_id = subCategory.id, item = subCategory)}}'>Delete</a>
+            </div>
+        </main>
+
+{% endblock %}

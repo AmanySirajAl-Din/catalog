@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Food Catalog</title>
+        <link type="text/css" rel="stylesheet" href="/static/styles.css"/>
+        <!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="//apis.google.com/js/platform.js?onload=start" async defer></script>
+        <!-- END PRE-REQUISITES FOR GOOGLE SIGN IN -->
+    </head>
+	
+	<body>
+        <div class="back-div"></div>
+        
+        {% include "header.html" %}
+        
+        <div class = 'flash'>
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+
+            <ul>
+            {% for message in messages %}
+                <li> <strong> {{ message }} </strong> </li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+        {% endwith %}
+
+        </div>
+        
+        
+        <div class='main-container'>
+			{% block content %}
+			{% endblock %}
+        </div>
+            
+	</body>
+</html>

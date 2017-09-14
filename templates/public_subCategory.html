@@ -1,0 +1,11 @@
+{% extends "main.html" %}
+{% block content %}            
+            
+    {% include "return-to-home.html" %}
+
+        <main class="sub-category-item main-section">
+            <h1 class="sub-header">{{subCategory.name}} Recipes</h1>
+            <p class="descrip-p">Description: {{subCategory.description}}</p>
+        </main>
+
+{% endblock %}

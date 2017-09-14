@@ -1,0 +1,13 @@
+{% extends "main.html" %}
+{% block content %}            
+            
+    {% include "main-categories.html" %}
+
+    <main class="latest-updates main-section">
+        <h1 class="sub-header">Latest Food Items</h1>
+            {% for i in latestItems %}
+                <p><a href='{{url_for('subCategory', mainCategory_id = i.category.id, subCategory_id = i.id)}}' class="latest-item">{{i.name}} Recipes <span class="latest-item-category">( {{i.category.name}} )</span>
+                </a></p>
+            {% endfor %}
+    </main>
+{% endblock %}

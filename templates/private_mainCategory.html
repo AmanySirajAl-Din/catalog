@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+{% block content %}            
+            
+    {% include "main-categories.html" %}
+
+        <main class="sub-categories main-section">
+            <h1 class="sub-header">{{mainCategory.name}} Recipes Categories</h1>
+            <p class="descrip-p">Description: {{mainCategory.description}}</p>
+            {% for i in subCategories %}
+            <p>
+                <a href='{{url_for('subCategory', mainCategory_id = mainCategory_id, subCategory_id = i.id)}}'>       {{i.name}} Recipes
+                        </a>
+            </p>
+            {% endfor %}
+            
+            <p class="add-new-sub">
+                <a href='{{url_for('newSubCategory', mainCategory_id = mainCategory.id)}}'>
+                    **Add New {{mainCategory.name}} Sub Category** 
+                </a>
+            </p>
+        </main>
+
+{% endblock %}

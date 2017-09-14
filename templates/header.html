@@ -1,0 +1,13 @@
+<header>
+    <div class="header-container">
+        <h1 class="main-header">Food Catalog Project</h1>
+        
+        <div class="login-div">
+            {%if 'username' not in session %}
+                <a href="{{url_for('showLogin')}}">Login</a>
+            {% else %}
+                <a href="{{url_for('disconnect')}}">Logout</a>
+            {% endif %}
+        </div>
+    </div>
+</header>

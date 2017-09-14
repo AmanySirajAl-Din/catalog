@@ -1,0 +1,8 @@
+<aside class="main-categories">
+    <h1 class="sub-header">Food Categories</h1>
+    {% for mc in mainCategories %}
+        <div class='category-name'>
+            <a href='{{url_for('mainCategory', mainCategory_id = mc.id)}}'>{{mc.name}} Recipes</a>
+        </div>
+    {% endfor %}
+</aside>
